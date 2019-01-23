@@ -1,0 +1,27 @@
+body {
+    padding-top: 54px;
+    /* padding-bottom: 60px; */
+  }
+  
+  @media (min-width: 992px) {
+    body {
+      padding-top: 56px;
+    }
+  }
+  
+  .card {
+    height: 100%;
+  }
+
+  .footer{
+    position: relative;
+    width: 100%;
+    bottom: 0;
+  }
+
+  .main {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}

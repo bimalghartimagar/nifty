@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="alert alert-warning" role="alert" {% if environment.PRODUCTION  %} style="display: none" {% endif %}>
+  This is a development environment
+</div>
+
+<!-- Page Content -->
+<div class="container">
+
+  <!-- Jumbotron Header -->
+  <header class="jumbotron my-4">
+    <h1 class="display-3">A Warm Welcome! {{remote_ip}}</h1>
+    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt
+      possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam
+      repellat.</p>
+    <p class="lead">{{ environment.DEBUG }}</p>
+    <a href="#" class="btn btn-primary btn-lg">Call to action!</a>
+  </header>
+
+  <!-- Page Features -->
+  <div class="row text-center">
+
+    <div class="col-lg-3 col-md-6 mb-4">
+      <div class="card">
+        <img class="card-img-top" src="https://placehold.it/500x325?text=Forex" alt="">
+        <div class="card-body">
+          <h4 class="card-title">Forex</h4>
+          <p class="card-text">Scraping various foreign exchange sites of local bank to extract latest currency rates and compare them.</p>
+        </div>
+        <div class="card-footer">
+          <a href="/forex" class="btn btn-primary">Forex</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 mb-4">
+      <div class="card">
+        <img class="card-img-top" src="https://placehold.it/500x325?text=Web Development" alt="">
+        <div class="card-body">
+          <h4 class="card-title">Web Development</h4>
+          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo magni sapiente,
+            tempore debitis beatae culpa natus architecto.</p>
+        </div>
+        <div class="card-footer">
+          <a href="#" class="btn btn-primary">Find Out More!</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 mb-4">
+      <div class="card">
+        <img class="card-img-top" src="https://placehold.it/500x325?text=Automation" alt="">
+        <div class="card-body">
+          <h4 class="card-title">Automation</h4>
+          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus
+            neque.</p>
+        </div>
+        <div class="card-footer">
+          <a href="#" class="btn btn-primary">Find Out More!</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 mb-4">
+      <div class="card">
+        <img class="card-img-top" src="https://placehold.it/500x325?text=Deployment" alt="">
+        <div class="card-body">
+          <h4 class="card-title">Deployment</h4>
+          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo magni sapiente,
+            tempore debitis beatae culpa natus architecto.</p>
+        </div>
+        <div class="card-footer">
+          <a href="#" class="btn btn-primary">Find Out More!</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- /.row -->
+
+</div>
+<!-- /.container -->
+
+
+
+{% endblock %}

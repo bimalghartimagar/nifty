@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Page Content -->
+<div class="container">
+    <h1 class="display-3">Forex</h1>
+
+    <div class="row">
+        <form method="POST" action="/forex">
+            <div class="form-group row main">
+
+                <div><label>Select Banks:</label></div>
+                <select class="selectpicker" multiple multiple="multiple" data-live-search="true" name="banks">
+                    {% for bank in bank_list %}
+                    <option value="{{ bank['bank_symbol'] }}">{{ bank['bank_name']}}</option>
+                    {% endfor %}
+                </select>
+                <div><button type="submit" class="btn btn-outline-primary">Get Forex</button></div>
+            </div>
+        </form>
+    </div>
+
+    <!-- Page Features -->
+    <div class="row text-center">
+        {% for rate in rates %}
+        <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card">
+                <img class="card-img-top" src="https://placehold.it/500x325?text={{ 'NRs. %s' | format(rate['rate']) }}"
+                    alt="">
+                <div class="card-body">
+                    <h4 class="card-title">{{ rate['symbol'] }} </h4>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <!-- /.row -->
+
+</div>
+<!-- /.container -->
+{% endblock %}

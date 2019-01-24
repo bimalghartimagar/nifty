@@ -1,9 +1,10 @@
 from flask import Flask, request, render_template
-from run_scrape import get_scraped_data
+from run_scrape import run
 import json
 import os
 from utils.config import get_config
 from dao import db
+
 app = Flask(__name__)
 env_type = os.environ.get('ENV_TYPE', 'dev')
 
@@ -21,7 +22,7 @@ def forex():
     if request.method == 'GET':        
         return render_template('forex.html', bank_list=bank_list)
     elif request.method == 'POST':
-        rates = get_scraped_data(request.form.getlist('banks'))
+        rates = run(request.form.getlist('banks'))
         return render_template('forex-result.html', bank_list=bank_list, rates=rates)
 
 if __name__ == '__main__':

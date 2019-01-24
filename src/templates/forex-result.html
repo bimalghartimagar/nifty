@@ -20,22 +20,24 @@
         </form>
     </div>
 
-    <!-- Page Features -->
-    <div class="row text-center">
-        {% for rate in rates %}
-        <div class="col-lg-3 col-md-6 mb-4">
-            <div class="card">
-                <img class="card-img-top" src="https://placehold.it/500x325?text={{ 'NRs. %s' | format(rate['rate']) }}"
-                    alt="">
-                <div class="card-body">
-                    <h4 class="card-title">{{ rate['symbol'] }} </h4>
-                </div>
-            </div>
-        </div>
-        {% endfor %}
-    </div>
-    <!-- /.row -->
-
+    <table class="table table-sm">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Bank Name</th>
+                <th scope="col">USD Buying</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for rate in rates %}
+            <tr>
+                <th scope="row">{{ loop.index }}</th>
+                <td>{{ rate['symbol'] }}</td>
+                <td>{{ 'NRs. %s' | format(rate['rate']) }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </div>
 <!-- /.container -->
 {% endblock %}

@@ -1,3 +1,5 @@
+""" Worker Thread Module for running scrapper in multithread mode. """
+
 from threading import Thread
 
 from src.abstract_scrape import ConcreteScrapperCreator

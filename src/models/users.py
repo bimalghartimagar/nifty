@@ -1,6 +1,9 @@
+""" User Model """
+
 from sqlalchemy import Column, Integer, String
 
 from src.dao.base import Base
+
 
 class Users(Base):
     __tablename__ = 'users'

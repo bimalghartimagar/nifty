@@ -1,7 +1,10 @@
+""" Foreign Exchange Model """
+
 from sqlalchemy import Column, ForeignKey, Integer, String, Float
 from sqlalchemy.orm import relationship
 
 from src.dao.base import Base
+
 
 class Forex(Base):
     __tablename__ = 'forex'

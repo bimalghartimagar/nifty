@@ -1,4 +1,4 @@
-from threading import Thread
+""" Module for running scrappers """
 
 from src.abstract_scrape import ConcreteScrapperCreator
 from src.worker import ScrapeWorker
@@ -23,6 +23,7 @@ def run(bank_symbol_list):
     print(rate_list)
     rate_list.sort(key=rate_sort, reverse=True)
     return rate_list
+
 
 def get_scraped_data(bank_symbol_list):
     rate_list = []

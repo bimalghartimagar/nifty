@@ -11,7 +11,8 @@ class ProductionConfig(Config):
     DB_IP = ''
     DATABASE_URL = 'postgresql://{DB_USERNAME}:{DB_PASSWORD}@{DB_IP}'.format(**locals())
     # For heroku
-    DATABASE_URL = os.getenv('DATABASE_URL', DATABASE_URL) 
+    DATABASE_URL = os.getenv('DATABASE_URL', DATABASE_URL)
+    ENVIRONMENT = os.getenv('ENV_TYPE')
 
 class TestingConfig(Config):
     TESTING = True

@@ -9,7 +9,9 @@ class ProductionConfig(Config):
     DB_PASSWORD = ''
     DB_NAME = ''
     DB_IP = ''
-    DATABASE_URI = 'postgresql://{DB_USERNAME}:{DB_PASSWORD}@{DB_IP}'.format(**locals())
+    DATABASE_URL = 'postgresql://{DB_USERNAME}:{DB_PASSWORD}@{DB_IP}'.format(**locals())
+    # For heroku
+    DATABASE_URL = os.getenv('DATABASE_URL', DATABASE_URL) 
 
 class TestingConfig(Config):
     TESTING = True
@@ -18,7 +20,7 @@ class TestingConfig(Config):
     DB_PASSWORD = ''
     DB_NAME = ''
     DB_IP = ''
-    DATABASE_URI = 'postgresql://{DB_USERNAME}:{DB_PASSWORD}@{DB_IP}'.format(**locals())
+    DATABASE_URL = 'postgresql://{DB_USERNAME}:{DB_PASSWORD}@{DB_IP}'.format(**locals())
 
 class DevelopmentConfig(Config):
     DEBUG = True
@@ -28,7 +30,7 @@ class DevelopmentConfig(Config):
     DB_NAME = ''
     DB_IP = ''
     DB_PORT = 0
-    DATABASE_URI = 'postgresql://{DB_USERNAME}:{DB_PASSWORD}@{DB_IP}:{DB_PORT}/{DB_NAME}'.format(**locals())
+    DATABASE_URL = 'postgresql://{DB_USERNAME}:{DB_PASSWORD}@{DB_IP}:{DB_PORT}/{DB_NAME}'.format(**locals())
 
 def get_config():
     

@@ -1,20 +1,24 @@
+import os
+
 class Config(object):
     DEBUG = False
     TESTING = False
-    DATABASE_URI = ''
-    USERNAME = ''
-    PASSWORD = ''
 
 class ProductionConfig(Config):
-    USERNAME = ''
-    PASSWORD = ''
-    DATABASE_URI = ''
+    DB_USERNAME = ''
+    DB_PASSWORD = ''
+    DB_NAME = ''
+    DB_IP = ''
+    DATABASE_URI = 'postgresql://{DB_USERNAME}:{DB_PASSWORD}@{DB_IP}'.format(**locals())
 
 class TestingConfig(Config):
     TESTING = True
-    USERNAME = ''
-    PASSWORD = ''
-    DATABASE_URI = ''
+    
+    DB_USERNAME = ''
+    DB_PASSWORD = ''
+    DB_NAME = ''
+    DB_IP = ''
+    DATABASE_URI = 'postgresql://{DB_USERNAME}:{DB_PASSWORD}@{DB_IP}'.format(**locals())
 
 class DevelopmentConfig(Config):
     DEBUG = True
@@ -26,10 +30,14 @@ class DevelopmentConfig(Config):
     DB_PORT = 0
     DATABASE_URI = 'postgresql://{DB_USERNAME}:{DB_PASSWORD}@{DB_IP}:{DB_PORT}/{DB_NAME}'.format(**locals())
 
-def get_config(env):
+def get_config():
+    
+    env_type = os.environ.get('ENV_TYPE', 'dev')
+    
     env_dict = {
         'dev': DevelopmentConfig,
         'test': TestingConfig,
         'production': ProductionConfig
     }
-    return env_dict[env]
+    
+    return env_dict[env_type]

@@ -1,6 +1,8 @@
-from dao.base import session
+from dao.base import Session
 from models.banks import Banks
 from models.forex import Forex
+
+session = Session()
 
 def add_forex(forex_list):
     for currency, rate in banks:

@@ -1,7 +1,7 @@
 from sqlalchemy.dialects.postgresql import insert
 
 from models.banks import Banks
-from dao.base import session
+from dao.base import Base, Session, engine
 
 def run_initial():
     banks_data = [
@@ -22,6 +22,10 @@ def run_initial():
         {'bank_name': 'Agricultural Development Bank Limited', 'bank_symbol':'ADBL'},
         {'bank_name': 'Mega Bank Nepal Limited', 'bank_symbol':'MB'}
     ]
+
+    Base.metadata.create_all(engine)
+
+    session = Session()
 
     # Load banks data
     statement = insert(Banks).values(banks_data).on_conflict_do_nothing(index_elements=['bank_symbol'])

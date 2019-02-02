@@ -4,20 +4,11 @@
 <!-- Page Content -->
 <div class="container">
     <h1 class="display-3">Forex</h1>
-
+    <blockquote class="blockquote">
+        Scrape data from {{ bank_list|length }} banks to show the current USD foreign exchange rate,  sort in descending order of rate and show percentage difference from the highest.
+      </blockquote>
     <div class="row">
-        <form method="POST" action="/forex">
-            <div class="form-group row main">
-
-                <div><label>Select Banks:</label></div>
-                <select class="selectpicker" multiple multiple="multiple" data-live-search="true" name="banks">
-                    {% for bank in bank_list %}
-                    <option value="{{ bank['bank_symbol'] }}">{{ bank['bank_name']}}</option>
-                    {% endfor %}
-                </select>
-                <div><button type="submit" class="btn btn-outline-primary">Get Forex</button></div>
-            </div>
-        </form>
+        {% include "banks-dropdown.html" %}
     </div>
 
 </div>

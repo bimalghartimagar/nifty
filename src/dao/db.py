@@ -1,6 +1,6 @@
-from dao.base import Session
-from models.banks import Banks
-from models.forex import Forex
+from src.dao.base import Session
+from src.models.banks import Banks
+from src.models.forex import Forex
 
 session = Session()
 

@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-from scrapper import *
+from src.scrapper import *
 
 class ScrapperCreator(ABC):
     """ Scrapper Factory """

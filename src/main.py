@@ -1,10 +1,10 @@
 from flask import Flask, request, render_template
-from run_scrape import run
+from src.run_scrape import run
 import json
 import os
-from utils.config import get_config
-from utils import utility
-from dao import db
+from src.utils.config import get_config
+from src.utils import utility
+from src.dao import db
 
 app = Flask(__name__)
 env_type = os.environ.get('ENV_TYPE', 'dev')

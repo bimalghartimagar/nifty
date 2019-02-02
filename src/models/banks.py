@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
 
-from dao.base import Base
+from src.dao.base import Base
 
 class Banks(Base):
     __tablename__ =  'banks'

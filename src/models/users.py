@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, String
 
-from dao.base import Base
+from src.dao.base import Base
 
 class Users(Base):
     __tablename__ = 'users'

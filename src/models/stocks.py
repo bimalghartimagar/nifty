@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, String, Date, Float
 
-from dao.base import Base
+from src.dao.base import Base
 
 class Stock(Base):
     __tablename__ = 'stocks'

@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 from bs4 import BeautifulSoup
 import requests
 
-from utils import utility
+from src.utils import utility
 
 class Scrapper(ABC):
 

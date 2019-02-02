@@ -1,6 +1,6 @@
 from threading import Thread
 
-from abstract_scrape import ConcreteScrapperCreator
+from src.abstract_scrape import ConcreteScrapperCreator
 concrete_creator = ConcreteScrapperCreator()
 
 

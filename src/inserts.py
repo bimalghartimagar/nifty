@@ -1,7 +1,7 @@
 from sqlalchemy.dialects.postgresql import insert
 
-from models.banks import Banks
-from dao.base import Base, Session, engine
+from src.models.banks import Banks
+from src.dao.base import Base, Session, engine
 
 def run_initial():
     banks_data = [

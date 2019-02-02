@@ -1,7 +1,7 @@
 from threading import Thread
 
 from src.abstract_scrape import ConcreteScrapperCreator
-from worker import ScrapeWorker
+from src.worker import ScrapeWorker
 from src.utils.utility import rate_sort
 
 concrete_creator = ConcreteScrapperCreator()

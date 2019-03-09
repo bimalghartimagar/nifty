@@ -1,1 +1,1 @@
-web: gunicorn src.main:app
+web: gunicorn --certfile=localhost.pem --keyfile=localhost-key.pem src.main:app

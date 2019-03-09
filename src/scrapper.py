@@ -213,4 +213,4 @@ scrappers = {
 }
 
 if __name__ == "__main__":
-    LBBLScrapper().scrape_data()
+    NIBLScrapper().scrape_data()
